@@ -1,42 +1,53 @@
 /* style.css */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background: #f4f4f4;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  #map {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* spacing between the two maps */
-    margin-bottom: 40px; /* space before bar charts */
-    flex-wrap: wrap;
-  }
-  
-  .map-container {
-    width: 480px;  /* half of 960px to keep side-by-side */
-  }
-  
-  select {
-    margin: 10px;
-    padding: 5px;
-    font-size: 14px;
-  }
-  
-  #barChartContainer1,
-  #barChartContainer2 {
-    margin: 30px auto;
-    width: 960px;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f4f4f4;
+}
 
-  svg {
-    background: #fff;
-    border: 1px solid #ccc;
-  }
-  
-  
+h1 {
+  text-align: center;
+}
+
+/* Main container for both maps and bar charts */
+#map-and-charts {
+display: flex;
+justify-content: space-between; /* Place maps and charts beside each other */
+align-items: flex-start; /* Align them to the top */
+gap: 200px; /* spacing between maps and bar charts */
+flex-wrap: wrap; /* Allow wrapping for responsiveness */
+margin-bottom: 40px; /* Space before bar charts */
+}
+
+.map-container {
+width: 45%; /* Adjust width of maps to make space for charts */
+height: 400px; /* Adjust the height as needed for maps */
+background: #ddd; /* Example background for maps */
+}
+
+.bar-chart-container {
+width: 82%; /* Make bar chart container wide */
+display: flex;
+flex-direction: column;
+gap: 20px; /* Space between bar charts */
+}
+
+#barChartContainer1,
+#barChartContainer2 {
+width: 100%;
+height: 400px; /* Increase height of bar charts */
+background: #fff;
+border: 1px solid #ccc; /* Optional border */
+}
+
+select {
+margin: 10px;
+padding: 5px;
+font-size: 14px;
+}
+
+svg {
+background: #fff;
+border: 1px solid #ccc;
+}
