@@ -51,18 +51,53 @@ function updateAttr1Visuals() {
   d3.select("#mapContainer1").html("");
   drawMap(data, geoData, "#mapContainer1", attr1);
 
-  renderBarChart(data, attr1, attr2, "#barChartContainer1");
+  renderBarChart(data, attr1, "#barChartContainer1");
+
+  renderScatterPlot(data, attr1, attr2, "#scatterPlotContainer", brushedData => {
+    if (brushedData) {
+      // Filter based on brush
+      updateAllVisuals(brushedData);
+    } else {
+      // Reset to full data
+      updateAllVisuals(data);
+    }
+  });
 }
+
 
 function updateAttr2Visuals() {
   const attr1 = d3.select("#attribute1Select").property("value");
   const attr2 = d3.select("#attribute2Select").property("value");
 
-  // Clear and redraw Map 2 + BarChart 2
   d3.select("#mapContainer2").html("");
   drawMap(data, geoData, "#mapContainer2", attr2);
 
-  renderBarChart(data, attr2, attr1, "#barChartContainer2");
-  renderScatterPlot(data, attr1, attr2, "#scatterPlotContainer");
+  renderBarChart(data, attr2, "#barChartContainer2");
 
+  // Add brush interaction
+  renderScatterPlot(data, attr1, attr2, "#scatterPlotContainer", brushedData => {
+    if (brushedData) {
+      // Filter based on brush
+      updateAllVisuals(brushedData);
+    } else {
+      // Reset to full data
+      updateAllVisuals(data);
+    }
+  });
+}
+
+function updateAllVisuals(filteredData) {
+  const attr1 = d3.select("#attribute1Select").property("value");
+  const attr2 = d3.select("#attribute2Select").property("value");
+
+  // Update all visuals
+  d3.select("#mapContainer1").html("");
+  drawMap(filteredData, geoData, "#mapContainer1", attr1);
+
+  renderBarChart(filteredData, attr1, "#barChartContainer1");
+
+  d3.select("#mapContainer2").html("");
+  drawMap(filteredData, geoData, "#mapContainer2", attr2);
+
+  renderBarChart(filteredData, attr2,"#barChartContainer2");
 }

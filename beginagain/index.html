@@ -16,20 +16,23 @@
 
   <!-- Wrap maps and charts in a flex container -->
   <div id="map-and-charts">
-    <div class="map-container" id="mapContainer1">
+    <div class="map-container" id="mapContainer1" style="padding-left: 300px; padding-right: 100px;">
       <!-- Choropleth Map 1 -->
     </div>
-    <div class="map-container" id="mapContainer2">
+    <div class="map-container" id="mapContainer2" style="padding-right: 300px;">
       <!-- Choropleth Map 2 -->
     </div>
-    
-    <div class="bar-chart-container">
-      <div id="barChartContainer1"></div>
-      <div id="barChartContainer2"></div>
-    </div>
   </div>
-  <div id="scatterPlotContainer"></div>
+  <div id="map-and-charts"> <!-- FLEX container -->
+  
+    <div id="barChartContainer1" class="bar-chart-container" style="padding-left: 100px;"></div>
 
+    <div id="scatterPlotContainer" style="padding-left: 100px; padding-right: 100px;"></div>
+
+    <div id="barChartContainer2" class="bar-chart-container"></div>
+
+</div>
+  
 
   <script type="module" src="js/main.js"></script>
 </body>

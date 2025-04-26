@@ -1,13 +1,13 @@
-function renderBarChart(dataset, attribute1, attribute2, containerId) {
+function renderBarChart(dataset, attribute2, containerId) {
     const topN = 20;
     const filteredData = [...dataset]
-        .filter(d => !isNaN(+d[attribute2]))
-        .sort((a, b) => d3.descending(+b[attribute2], +a[attribute2]))
-        .slice(0, topN);
+    .filter(d => !isNaN(+d[attribute2])) // Keep only numeric entries
+    .sort((a, b) => d3.descending(+a[attribute2], +b[attribute2])) // Sort high to low
+    .slice(0, topN); // Take top 20
 
     const margin = { top: 40, right: 10, bottom: 80, left: 60 };
-    const width = 500 - margin.left - margin.right;
-    const height = 300 - margin.top - margin.bottom;
+    const width = 800 - margin.left - margin.right;
+    const height = 800 - margin.top - margin.bottom;
 
     d3.select(containerId).html("");
     d3.selectAll(containerId+".tooltip").remove();

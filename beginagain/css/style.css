@@ -43,20 +43,32 @@ h1 {
 }
 
 
-.bar-chart-container {
-width: 82%; /* Make bar chart container wide */
-display: flex;
+/* .bar-chart-container {
+width: 32%; /* Make bar chart container wide */
+/* display: flex;
 flex-direction: column;
 gap: 20px; /* Space between bar charts */
+/* } */ */
+
+/* #barChartContainer1,
+#barChartContainer2 { */
+
+/* background: #fff; */
+/* border: 1px solid #ccc; Optional border
+} */ 
+
+.bar-chart-container, 
+#scatterPlotContainer {
+  /* width: 32%; around 1/3 each */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 
-#barChartContainer1,
-#barChartContainer2 {
-width: 100%;
-height: 400px; /* Increase height of bar charts */
-background: #fff;
-border: 1px solid #ccc; /* Optional border */
-}
+
 
 select {
 margin: 10px;
@@ -70,9 +82,8 @@ border: 1px solid #ccc;
 }
 
 #scatterPlotContainer {
-  margin-top: 70px;
+  /* margin-top: 70px; */
   padding: 10px;
-  width: 100%;
   display: flex;
   justify-content: center;
 }
