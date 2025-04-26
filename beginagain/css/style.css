@@ -68,3 +68,12 @@ svg {
 background: #fff;
 border: 1px solid #ccc;
 }
+
+#scatterPlotContainer {
+  margin-top: 70px;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
