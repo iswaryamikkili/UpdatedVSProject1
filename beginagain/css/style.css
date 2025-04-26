@@ -1,34 +1,90 @@
 /* style.css */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background: #f4f4f4;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  #map {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+}
+
+#map-and-charts {
+  display: flex;
+    border: 0.2cm solid blue;
+    width: 98%;
+    height: 95%;
     margin-top: 20px;
-  }
-  
-  svg {
-    background: #fff;
-    border: 1px solid #ccc;
-  }
-  
-  .tooltip {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 5px;
-    border-radius: 3px;
-    pointer-events: none;
-    font-size: 12px;
-  }
-  
+}
+
+.left {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.right {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: lightsteelblue;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+
+/* .bar-chart-container {
+width: 32%; /* Make bar chart container wide */
+/* display: flex;
+flex-direction: column;
+gap: 20px; /* Space between bar charts */
+/* } */ */
+
+/* #barChartContainer1,
+#barChartContainer2 { */
+
+/* background: #fff; */
+/* border: 1px solid #ccc; Optional border
+} */ 
+
+.bar-chart-container, 
+#scatterPlotContainer {
+  /* width: 32%; around 1/3 each */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+
+
+select {
+margin: 10px;
+padding: 5px;
+font-size: 14px;
+}
+
+svg {
+background: #fff;
+border: 1px solid #ccc;
+}
+
+#scatterPlotContainer {
+  /* margin-top: 70px; */
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+

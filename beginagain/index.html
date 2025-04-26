@@ -10,9 +10,30 @@
 </head>
 <body>
   <h1>US Counties Choropleth Map</h1>
-  <label for="attributeSelect">Select Attribute:</label>
-  <select id="attributeSelect"></select>
-  <div id="map"></div>
+  <!-- Attribute selectors -->
+  <select id="attribute1Select"></select>
+  <select id="attribute2Select"></select> 
+
+  <!-- Wrap maps and charts in a flex container -->
+  <div id="map-and-charts">
+    <div class="map-container" id="mapContainer1" style="padding-left: 300px; padding-right: 100px;">
+      <!-- Choropleth Map 1 -->
+    </div>
+    <div class="map-container" id="mapContainer2" style="padding-right: 300px;">
+      <!-- Choropleth Map 2 -->
+    </div>
+  </div>
+  <div id="map-and-charts"> <!-- FLEX container -->
+  
+    <div id="barChartContainer1" class="bar-chart-container" style="padding-left: 100px;"></div>
+
+    <div id="scatterPlotContainer" style="padding-left: 100px; padding-right: 100px;"></div>
+
+    <div id="barChartContainer2" class="bar-chart-container"></div>
+
+</div>
+  
+
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
