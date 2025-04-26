@@ -10,21 +10,38 @@ h1 {
   text-align: center;
 }
 
-/* Main container for both maps and bar charts */
 #map-and-charts {
-display: flex;
-justify-content: space-between; /* Place maps and charts beside each other */
-align-items: flex-start; /* Align them to the top */
-gap: 200px; /* spacing between maps and bar charts */
-flex-wrap: wrap; /* Allow wrapping for responsiveness */
-margin-bottom: 40px; /* Space before bar charts */
+  display: flex;
+    border: 0.2cm solid blue;
+    width: 98%;
+    height: 95%;
+    margin-top: 20px;
 }
 
-.map-container {
-width: 45%; /* Adjust width of maps to make space for charts */
-height: 400px; /* Adjust the height as needed for maps */
-background: #ddd; /* Example background for maps */
+.left {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
+.right {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: lightsteelblue;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
 
 .bar-chart-container {
 width: 82%; /* Make bar chart container wide */

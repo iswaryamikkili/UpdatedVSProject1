@@ -86,7 +86,7 @@ function renderBarChart(dataset, attribute1, attribute2, containerId) {
     const height = 300 - margin.top - margin.bottom;
 
     d3.select(containerId).html("");
-    d3.selectAll(".tooltip").remove();
+    d3.selectAll(containerId+".tooltip").remove();
 
     const svg = d3.select(containerId).append("svg")
         .attr("width", width + margin.left + margin.right)
