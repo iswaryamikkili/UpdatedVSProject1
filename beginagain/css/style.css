@@ -43,19 +43,6 @@ h1 {
 }
 
 
-/* .bar-chart-container {
-width: 32%; /* Make bar chart container wide */
-/* display: flex;
-flex-direction: column;
-gap: 20px; /* Space between bar charts */
-/* } */ */
-
-/* #barChartContainer1,
-#barChartContainer2 { */
-
-/* background: #fff; */
-/* border: 1px solid #ccc; Optional border
-} */ 
 
 .bar-chart-container, 
 #scatterPlotContainer {
@@ -88,3 +75,51 @@ border: 1px solid #ccc;
   justify-content: center;
 }
 
+#boxplotContainer {
+  width: 100%;
+  height: 500px;
+  background-color: lightgray;
+  margin-top: 20px;
+  border: 2px dashed #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dropdownButton {
+  padding: 50px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  width: 200px;
+}
+
+#dropdownButton option {
+  font-size: 20px;
+}
+
+.boxplot-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background-color: #333;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0.9;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+.data-tooltip {
+  position: absolute;
+  background-color: lightsteelblue;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0.9;
+  pointer-events: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}

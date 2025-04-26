@@ -45,7 +45,7 @@ function renderBarChart(dataset, attribute2, containerId) {
         .attr("width", x.bandwidth())
         .attr("y", d => y(d[attribute2]))
         .attr("height", d => height - y(d[attribute2]))
-        .style("fill", "orange")
+        .style("fill", "#008080")
         .on("mouseover", function(event, d) {
             tooltip.style("visibility", "visible")
                 .html(`County: ${d["display_name"]}<br/>${attribute2}: ${d[attribute2]}`)
