@@ -50,14 +50,14 @@ function renderScatterPlot(dataset, attribute1, attribute2, containerSelector, o
         .on("mouseover", function (event, d) {
           if (isBrushing) return;
           tooltip.style("visibility", "visible")
-            .html(`County: ${d["display_name"]}<br/>${attribute1}: ${d[attribute1]}<br/>${attribute2}: ${d[attribute2]}`)
-            .style("left", (event.offsetX + 10) + "px")
-            .style("top", (event.offsetY - 10) + "px");
+            .html(`County: ${d["display_name"]}<br/>${label1}: ${d[attribute1]}<br/>${label2}: ${d[attribute2]}`)
+            .style("left", (event.offsetX + 30) + "px")
+            .style("top", (event.offsetY + 20) + "px");
         })
         .on("mousemove", function (event) {
           if (isBrushing) return;
-          tooltip.style("left", (event.offsetX + 10) + "px")
-            .style("top", (event.offsetY - 10) + "px");
+          tooltip.style("left", (event.offsetX + 30) + "px")
+            .style("top", (event.offsetY + 20) + "px");
         })
         .on("mouseout", function () {
           tooltip.style("visibility", "hidden");
