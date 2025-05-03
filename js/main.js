@@ -39,6 +39,27 @@ function setupDropdown() {
     }
   });
 }
+function formatLabel(col) {
+  if (col === "poverty_perc") {
+    return "Poverty Percentage";
+  }
+
+  let label = col;
+
+  if (label.startsWith("percent_")) {
+    label = label.replace("percent_", "").replace(/_/g, ' ') + " percentage";
+  } else {
+    label = label.replace(/_/g, ' ');
+  }
+
+  // Capitalize each word
+  label = label.split(' ').map(word =>
+    word.charAt(0).toUpperCase() + word.slice(1)
+  ).join(' ');
+
+  return label;
+}
+
 
 function setupDropdowns() {
   const attributes = Object.keys(data[0]).slice(2);
@@ -50,14 +71,14 @@ function setupDropdowns() {
     .data(attributes)
     .enter()
     .append("option")
-    .text(d => d.replace(/_/g, " "))
+    .text(d => formatLabel(d))
     .attr("value", d => d);
 
   attr2Select.selectAll("option")
     .data(attributes)
     .enter()
     .append("option")
-    .text(d => d.replace(/_/g, " "))
+    .text(d => formatLabel(d))
     .attr("value", d => d);
 
   attr1Select.on("change", () => {
@@ -81,29 +102,35 @@ function setupBrushToggle() {
 function updateAttr1Visuals() {
   const attr1 = d3.select("#attribute1Select").property("value");
   const attr2 = d3.select("#attribute2Select").property("value");
+  const label1 = formatLabel(attr1);
+  const label2 = formatLabel(attr2);
   const enableBrushing = d3.select("#togglebox").property("checked");
 
   d3.select("#mapContainer1").html("");
   drawMap(data, geoData, "#mapContainer1", attr1);
-  renderBarChart(data, attr1, "#barChartContainer1");
+  renderBarChart(data, attr1, "#barChartContainer1", label1);
 
   renderScatterPlot(data, attr1, attr2, "#scatterPlotContainer", brushedData => {
     updateAllVisuals(brushedData || data);
-  }, enableBrushing);
+  }, label1, label2);
+  renderBoxPlot(data, attr1, "#boxplotArea1",label1);
 }
 
 function updateAttr2Visuals() {
   const attr1 = d3.select("#attribute1Select").property("value");
   const attr2 = d3.select("#attribute2Select").property("value");
+  const label1 = formatLabel(attr1);
+  const label2 = formatLabel(attr2);
   const enableBrushing = d3.select("#togglebox").property("checked");
 
   d3.select("#mapContainer2").html("");
   drawMap(data, geoData, "#mapContainer2", attr2);
-  renderBarChart(data, attr2, "#barChartContainer2");
+  renderBarChart(data, attr2, "#barChartContainer2", label2);
 
   renderScatterPlot(data, attr1, attr2, "#scatterPlotContainer", brushedData => {
     updateAllVisuals(brushedData || data);
-  }, enableBrushing);
+  }, label1,label2);
+  renderBoxPlot(data, attr2, "#boxplotArea2",label2);
 }
 
 function updateAllVisuals(filteredData) {
@@ -116,7 +143,7 @@ function updateAllVisuals(filteredData) {
 
   d3.select("#mapContainer2").html("");
   drawMap(filteredData, geoData, "#mapContainer2", attr2);
-  renderBarChart(filteredData, attr2, "#barChartContainer2");
+  renderBarChart(filteredData, attr2, "#barChartContainer2", label1, label2);
 
   renderBoxPlot(filteredData, attr2, "#boxplotArea");
 }

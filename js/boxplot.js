@@ -1,4 +1,4 @@
-function renderBoxPlot(dataset, attribute, containerSelector) {
+function renderBoxPlot(dataset, attribute, containerSelector,label) {
   const margin = { top: 40, right: 30, bottom: 40, left: 50 };
   const width = 500 - margin.left - margin.right;
   const height = 500 - margin.top - margin.bottom;
@@ -112,7 +112,7 @@ function renderBoxPlot(dataset, attribute, containerSelector) {
     .attr("y", -5)
     .style("text-anchor", "middle")
     .style("font-weight", "bold")
-    .text(`Boxplot of ${attribute.replace(/_/g, " ")}`);
+    .text(`Boxplot of ${label}`);
 }
 
 export { renderBoxPlot };
