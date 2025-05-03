@@ -13,7 +13,7 @@
   <!-- Attribute selectors -->
   <select id="attribute1Select"></select>
   <select id="attribute2Select"></select> 
-
+  <label><input type="checkbox" id="togglebox"> Enable Brushing For Scatterplot</label>
   <!-- Wrap maps and charts in a flex container -->
   <div id="map-and-charts">
     <div class="map-container" id="mapContainer1" style="padding-left: 300px; padding-right: 100px;">
@@ -27,20 +27,21 @@
   
     <div id="barChartContainer1" class="bar-chart-container" style="padding-left: 100px;"></div>
 
-    <div id="scatterPlotContainer" style="padding-left: 100px; padding-right: 100px;"></div>
+    <div id="scatterPlotContainer" class="bar-chart-container" style="position: relative;"></div>
 
     <div id="barChartContainer2" class="bar-chart-container"></div>
 
 </div>
   
 <div id="boxplotContainer">
-  <!-- Dropdown inside the empty container -->
+  <!-- Dropdown stays at the top -->
   <select id="dropdownButton">
     <option value="" disabled selected>Select an attribute</option>
   </select>
+
+  <!-- Boxplot will be drawn here -->
+  <div id="boxplotArea"></div>
 </div>
-
-
 
   <script type="module" src="js/main.js"></script>
 </body>

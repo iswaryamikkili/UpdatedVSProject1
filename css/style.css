@@ -77,15 +77,24 @@ border: 1px solid #ccc;
 
 #boxplotContainer {
   width: 100%;
-  height: 500px;
+  height: auto;
   background-color: lightgray;
   margin-top: 20px;
-  border: 2px dashed #ccc;
+  border: 2px #211b7c;
+  display: flex;
+  flex-direction: column;  /* Stack items vertically */
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+}
+
+#boxplotArea {
+  width: 100%;
+  height: 500px; /* or adjust as needed */
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 #dropdownButton {
   padding: 50px;
   font-size: 16px;
@@ -112,14 +121,8 @@ border: 1px solid #ccc;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   z-index: 10;
 }
-.data-tooltip {
-  position: absolute;
-  background-color: lightsteelblue;
-  padding: 8px 10px;
-  border-radius: 5px;
-  font-size: 12px;
-  opacity: 0.9;
-  pointer-events: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  z-index: 10;
+
+.brush .overlay {
+  fill: none;
+  pointer-events: none;  /* Allow pointer events to pass through */
 }

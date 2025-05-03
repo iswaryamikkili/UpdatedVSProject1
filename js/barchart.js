@@ -1,5 +1,5 @@
 function renderBarChart(dataset, attribute2, containerId) {
-    const topN = 20;
+    const topN = 50;
     const filteredData = [...dataset]
     .filter(d => !isNaN(+d[attribute2])) // Keep only numeric entries
     .sort((a, b) => d3.descending(+a[attribute2], +b[attribute2])) // Sort high to low
