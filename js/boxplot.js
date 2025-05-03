@@ -34,6 +34,7 @@ function renderBoxPlot(dataset, attribute, containerSelector,label) {
     .attr("class", "boxplot-tooltip")
     .style("position", "absolute")
     .style("display", "none")
+    .style("color", "black")
     .style("padding", "6px")
     .style("background", "lightsteelblue")
     .style("border-radius", "4px")
