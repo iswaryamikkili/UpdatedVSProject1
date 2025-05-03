@@ -1,6 +1,6 @@
-function renderScatterPlot(dataset, attribute1, attribute2, containerSelector, onBrushCallback) {
-    const margin = { top: 20, right: 20, bottom: 30, left: 40 };
-    const width = 800 - margin.left - margin.right;
+function renderScatterPlot(dataset, attribute1, attribute2, containerSelector, onBrushCallback, label1, label2) {
+    const margin = { top: 40, right: 10, bottom: 80, left: 70  };
+    const width = 900 - margin.left - margin.right;
     const height = 800 - margin.top - margin.bottom;
   
     // Clear previous SVG and tooltip content
@@ -43,7 +43,7 @@ function renderScatterPlot(dataset, attribute1, attribute2, containerSelector, o
       .attr("cx", d => x(+d[attribute1]))
       .attr("cy", d => y(+d[attribute2]))
       .style("fill", "#008080")
-      .style("opacity", 0.7);
+      .style("opacity", 0.6);
   
     function bindTooltip() {
       dots
@@ -85,6 +85,21 @@ function renderScatterPlot(dataset, attribute1, attribute2, containerSelector, o
       .style("text-anchor", "middle")
       .text(attribute2);
   
+      svg.append("text")
+        .attr("x", width / 2)
+        .attr("y", height+40)
+        .attr("text-anchor", "middle")
+        .style("font-size", "14px")
+        .text(label1);  // Replace with actual attribute name
+    
+    // Add y-axis label
+    svg.append("text")
+        .attr("x", -height / 2)
+        .attr("y", -50)
+        .attr("text-anchor", "middle")
+        .style("font-size", "14px")
+        .attr("transform", "rotate(-90)") // Rotate to align with the y-axis
+        .text(label2);
     const togglebox = document.querySelector("#togglebox");
   
     if (togglebox?.checked) {

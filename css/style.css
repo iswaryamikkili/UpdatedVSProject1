@@ -76,19 +76,14 @@ border: 1px solid #ccc;
 }
 
 #boxplotContainer {
-  width: 100%;
-  height: auto;
-  background-color: lightgray;
-  margin-top: 20px;
-  border: 2px #211b7c;
   display: flex;
-  flex-direction: column;  /* Stack items vertically */
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px;
+    border: 0.2cm solid blue;
+    width: 98%;
+    height: 95%;
+    margin-top: 20px;
 }
 
-#boxplotArea {
+#boxplotArea1, #boxplotArea2 {
   width: 100%;
   height: 500px; /* or adjust as needed */
   display: flex;
@@ -125,4 +120,10 @@ border: 1px solid #ccc;
 .brush .overlay {
   fill: none;
   pointer-events: none;  /* Allow pointer events to pass through */
+}
+input[type='checkbox'] {
+  width:30px;
+  height:30px;
+  background:white;
+  border-radius:5px;
 }

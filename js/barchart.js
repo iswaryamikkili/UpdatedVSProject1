@@ -1,11 +1,11 @@
-function renderBarChart(dataset, attribute2, containerId) {
+function renderBarChart(dataset, attribute2, containerId, label1) {
     const topN = 50;
     const filteredData = [...dataset]
     .filter(d => !isNaN(+d[attribute2])) // Keep only numeric entries
     .sort((a, b) => d3.descending(+a[attribute2], +b[attribute2])) // Sort high to low
     .slice(0, topN); // Take top 20
 
-    const margin = { top: 40, right: 10, bottom: 80, left: 60 };
+    const margin = { top: 40, right: 10, bottom: 120, left: 60 };
     const width = 800 - margin.left - margin.right;
     const height = 800 - margin.top - margin.bottom;
 
@@ -69,5 +69,21 @@ function renderBarChart(dataset, attribute2, containerId) {
     svg.append("g")
         .attr("class", "y axis")
         .call(d3.axisLeft(y));
+    
+        svg.append("text")
+        .attr("x", width / 2)
+        .attr("y", height+90)
+        .attr("text-anchor", "middle")
+        .style("font-size", "14px")
+        .text(label1);  // Replace with actual attribute name
+    
+    // Add y-axis label
+    svg.append("text")
+        .attr("x", -height / 2)
+        .attr("y", -50)
+        .attr("text-anchor", "middle")
+        .style("font-size", "14px")
+        .attr("transform", "rotate(-90)") // Rotate to align with the y-axis
+        .text("Count");
 }
 export {renderBarChart}

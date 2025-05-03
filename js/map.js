@@ -46,7 +46,7 @@ export function drawMap(data, geoData, mapContainerId, attribute) {
   const projection = d3.geoAlbersUsa().scale(1280).translate([width / 2, height / 2]);
   const path = d3.geoPath().projection(projection);
 
-  const colorScale = d3.scaleSequential(d3.interpolateBlues);
+  const colorScale = d3.scaleSequential(d3.interpolateGreens);
 
   const tooltip = d3.select(mapContainerId).append("div")
     .attr("class", "tooltip")

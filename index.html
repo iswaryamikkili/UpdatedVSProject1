@@ -27,20 +27,16 @@
   
     <div id="barChartContainer1" class="bar-chart-container" style="padding-left: 100px;"></div>
 
-    <div id="scatterPlotContainer" class="bar-chart-container" style="position: relative;"></div>
+    <div id="scatterPlotContainer" class="bar-chart-container" style="position: relative; padding-left: 20px; padding-right: 20px;"></div>
 
     <div id="barChartContainer2" class="bar-chart-container"></div>
 
 </div>
   
-<div id="boxplotContainer">
-  <!-- Dropdown stays at the top -->
-  <select id="dropdownButton">
-    <option value="" disabled selected>Select an attribute</option>
-  </select>
-
+<div id="boxplotContainer" style="align-items: center;">
   <!-- Boxplot will be drawn here -->
-  <div id="boxplotArea"></div>
+  <div id="boxplotArea1" style="align-self: center;"></div>
+  <div id="boxplotArea2" style="align-self: center;"></div>
 </div>
 
   <script type="module" src="js/main.js"></script>
